@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>福如东海 寿比南山 - 王老先生八秩寿宴</title>
+    <title>福如东海 寿比南山 - 陈老先生八秩寿宴</title>
     <!-- 微信分享优化 -->
     <meta property="og:title" content="寿宴邀请函">
     <meta property="og:image" content="images/wechat-thumb.jpg">
-    <meta name="description" content="诚邀您参加王老先生八秩寿诞">
+    <meta name="description" content="诚邀您参加陈老先生八秩寿诞">
     <style>
         :root {
             --main-color: #c30d23;
@@ -138,9 +138,9 @@
         <section class="section header" id="cover">
             <div class="deco-border">
                 <h1>福寿双全宴</h1>
-                < img src="images/lotus.png" alt="吉祥图案" >
-                <h2>恭请莅临王公讳志刚老先生八秩寿诞</h2>
-                <p>二零二三年十月十五日 吉时</p >
+                <img src="images/lotus.png"></img>
+                <h2>恭请莅临陈公讳老先生八秩寿诞</h2>
+                <p>二零二五年十月十五日 吉时</p >
                 <div id="countdown">正在计算倒计时...</div>
             </div>
         </section>
@@ -149,8 +149,8 @@
         <section class="section" id="intro">
             <div class="deco-border">
                 <h3>寿星风采</h3>
-                < img src="images/old-photo.jpg" alt="寿星照片" class="deco-img">
-                <p>王老先生生于1943年，一生勤勉，德高望重...</p >
+                <img src="images/old-photo.jpg" alt="寿星照片" class="deco-img">
+                <p>陈老先生生于1943年，一生勤勉，德高望重...</p >
             </div>
         </section>
 
@@ -171,10 +171,10 @@
         <section class="section" id="location">
             <div class="deco-border">
                 <h3>宴会地址</h3>
-                <p>北京市朝阳区某某大酒店3楼宴会厅</p >
+                <p>重庆市江津区某某大酒店3楼宴会厅</p >
                 <!-- 地图容器 -->
                 <div id="map" style="height:300px; margin:20px 0; background:#eee; border-radius:10px;">
-                    <!-- 实际使用需接入地图API -->
+                    <script src="https://api.map.baidu.com/api?v=3.0&ak=iEVV6LLDW0pM3QgVeP12AZ4V06ZrN3jO"></script>
                     <p style="text-align:center; padding:50px 0;">地图加载中...</p >
                 </div>
                 <a href=" " class="cta-button">
@@ -204,7 +204,7 @@
 
         // 倒计时
         function updateCountdown() {
-            const targetDate = new Date('2023-10-15T18:00:00');
+            const targetDate = new Date('2025-10-15T18:00:00');
             const now = new Date();
             const diff = targetDate - now;
 
@@ -224,7 +224,7 @@
         function sharePage() {
             const shareData = {
                 title: '寿宴邀请函',
-                text: '诚邀您参加王老先生八秩寿宴',
+                text: '诚邀您参加陈老先生八秩寿宴',
                 url: window.location.href
             };
 
