@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福如东海 寿比南山 - 王老先生八秩寿宴</title>
+    <style>
+        :root {
+            --main-color: #c30d23;
+            --gold-color: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑', 'STXingkai', cursive;
+        }
+
+        body {
+            background: #f9f2e9 url('bg-pattern.png');
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--main-color);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .deco-border {
+            border: 3px solid var(--gold-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            background: var(--main-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        /* 更多样式... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 封面 -->
+        <section class="section header" id="cover">
+            <div class="deco-border">
+                <h1>福寿双全宴</h1>
+                < img src="lotus.png" alt="吉祥图案" class="deco-img">
+                <h2>恭请莅临王公讳志刚老先生八秩寿诞</h2>
+                <p>二零二三年十月十五日 吉时</p >
+            </div>
+        </section>
+
+        <!-- 寿星简介 -->
+        <section class="section" id="intro">
+            <div class="deco-border">
+                <h3>寿星风采</h3>
+                < img src="old-photo.jpg" alt="寿星照片">
+                <p>王老先生一生勤勉，德高望重...</p >
+            </div>
+        </section>
+
+        <!-- 活动流程 -->
+        <section class="section" id="schedule">
+            <!-- 时间安排内容 -->
+        </section>
+
+        <!-- 地图导航 -->
+        <section class="section" id="location">
+            <!-- 地图模块 -->
+        </section>
+    </div>
+
+    <!-- 分享浮窗 -->
+    <div class="share-overlay">
+        <button class="cta-button" onclick="sharePage()">分享邀请函</button>
+    </div>
+
+    <script>
+        // 滚动动画检测
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if(rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        // 分享功能
+        function sharePage() {
+            if(navigator.share) {
+                navigator.share({
+                    title: '寿宴邀请函',
+                    text: '诚邀您参加王老先生八秩寿宴',
+                    url: window.location.href
+                });
+            } else {
+                prompt('请复制链接分享给亲友：', window.location.href);
+            }
+        }
+
+        // 微信分享适配
+        document.addEventListener('WeixinJSBridgeReady', function() {
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    title: '寿宴邀请函',
+                    desc: '诚邀您参加王老先生八秩寿宴',
+                    link: window.location.href,
+                    img_url: 'thumbnail.jpg'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
