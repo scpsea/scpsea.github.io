@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>福如东海 寿比南山 - 王老先生八秩寿宴</title>
+    <!-- 微信分享优化 -->
+    <meta property="og:title" content="寿宴邀请函">
+    <meta property="og:image" content="./images/wechat-thumb.jpg">
+    <meta name="description" content="诚邀您参加王老先生八秩寿诞">
+    <style>
+        :root {
+            --main-color: #c30d23;
+            --gold-color: #ffd700;
+            --text-color: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', SimSun, sans-serif;
+        }
+
+        body {
+            background: #f9f2e9;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 章节动画 */
+        .section {
+            min-height: 100vh;
+            padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease-out;
+            margin: 20px 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2.5em;
+            color: var(--main-color);
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: var(--main-color);
+            margin: 15px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: var(--gold-color);
+            border-bottom: 2px solid var(--main-color);
+            padding-bottom: 10px;
+            margin: 20px 0;
+        }
+
+        /* 图片容器 */
+        .deco-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 装饰边框 */
+        .deco-border {
+            border: 3px solid var(--gold-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        /* 倒计时样式 */
+        #countdown {
+            font-size: 1.2em;
+            color: var(--main-color);
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,215,0,0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* 分享按钮 */
+        .share-overlay {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .cta-button {
+            display: block;
+            width: 180px;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--main-color), #a50c1f);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(195,13,35,0.3);
+            transition: transform 0.3s;
+        }
+
+        .cta-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 封面 -->
+        <section class="section header" id="cover">
+            <div class="deco-border">
+                <h1>福寿双全宴</h1>
+                < img src="./images/lotus.png" alt="吉祥图案" class="deco-img">
+                <h2>恭请莅临王公讳志刚老先生八秩寿诞</h2>
+                <p>二零二三年十月十五日 吉时</p >
+                <div id="countdown">正在计算倒计时...</div>
+            </div>
+        </section>
+
+        <!-- 寿星简介 -->
+        <section class="section" id="intro">
+            <div class="deco-border">
+                <h3>寿星风采</h3>
+                < img src="./images/old-photo.jpg" alt="寿星照片" class="deco-img">
+                <p>王老先生生于1943年，一生勤勉，德高望重...</p >
+            </div>
+        </section>
+
+        <!-- 活动流程 -->
+        <section class="section" id="schedule">
+            <div class="deco-border">
+                <h3>寿宴流程</h3>
+                <ul>
+                    <li>▶ 15:00 迎宾签到</li>
+                    <li>▶ 16:18 寿星入场</li>
+                    <li>▶ 16:30 拜寿仪式</li>
+                    <li>▶ 17:00 寿宴开席</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 地址导航 -->
+        <section class="section" id="location">
+            <div class="deco-border">
+                <h3>宴会地址</h3>
+                <p>北京市朝阳区某某大酒店3楼宴会厅</p >
+                <!-- 地图容器 -->
+                <div id="map" style="height:300px; margin:20px 0; background:#eee; border-radius:10px;">
+                    <!-- 实际使用需接入地图API -->
+                    <p style="text-align:center; padding:50px 0;">地图加载中...</p >
+                </div>
+                <a href=" " class="cta-button">
+                    点击导航
+                </a >
+            </div>
+        </section>
+    </div>
+
+    <!-- 分享按钮 -->
+    <div class="share-overlay">
+        <button class="cta-button" onclick="sharePage()">
+            <span>🎉</span> 分享邀请函
+        </button>
+    </div>
+
+    <script>
+        // 滚动动画
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if(rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        // 倒计时
+        function updateCountdown() {
+            const targetDate = new Date('2023-10-15T18:00:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if(diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById('countdown').innerHTML = `
+                    倒计时：${days}天${hours}小时
+                `;
+            } else {
+                document.getElementById('countdown').innerHTML = "寿宴正在进行中！";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+
+        // 分享功能
+        function sharePage() {
+            const shareData = {
+                title: '寿宴邀请函',
+                text: '诚邀您参加王老先生八秩寿宴',
+                url: window.location.href
+            };
+
+            try {
+                if(navigator.share) {
+                    navigator.share(shareData);
+                } else {
+                    const input = document.createElement('input');
+                    input.value = window.location.href;
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(input);
+                    alert('链接已复制，请粘贴分享给亲友');
+                }
+            } catch (err) {
+                console.log('分享失败:', err);
+            }
+        }
+
+        // 初始化首屏动画
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#cover').classList.add('active');
+        });
+    </script>
+</body>
+</html>
